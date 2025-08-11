@@ -74,12 +74,90 @@ $myCar = new Car("Toyota", "Corolla"); // creating an object of the Car class
     echo '<br>' . $myCar->getDetails(); // outputs: Car: Toyota Corolla
 
 // PHP functions
-// Functions in PHP are blocks of code that can be reused throughout the script.
-// function greet($name) {
-//     // This function takes a name as an argument and returns a greeting message.
-//     return "Hello, " . $name . "!";
+//Functions in PHP are blocks of code that can be reused throughout the script.
+function greet($name) {
+    //This function takes a name as an argument and returns a greeting message.
+   return "Hello, " . $name . "!";
 
-// }
+}
+
+// Calling the greet function
+echo '<br>' . greet("Alice"); // outputs: Hello, Alice!
+
+// PHP inbuilt-in functions
+// PHP provides many built-in functions for various tasks, such as string manipulation, array handling, 
+// and mathematical operations. Here are a few examples:
+echo '<br>' . strtoupper($greeting); // converts string to uppercase
+echo '<br>' . strtolower($greeting); // converts string to lowercase
+echo '<br>' . strlen($greeting); // gets the length of the string
+echo '<br>' . str_replace("PHP", "World", $greeting); // replaces "PHP" with "World" in the string
+echo '<br>' . count($colors); // counts the number of elements in the array 
+echo '<br>' . max($x, $y); // gets the maximum value between two numbers
+// PHP control structures
+// Control structures allow you to control the flow of your script based on certain conditions.
+
+// friday assessment on things learned so far
+// quiz
+
+// if statement
+// Declare a variable to hold a age in a if statement
+// we use if statements to execute code based on a condition.
+// The condition is a boolean expression that evaluates to true or false.
+// else if statement
+$age = 18; // integer variable
+if ($age >= 18) {
+    echo '<br> . You are an minor.'; // outputs: You are an adult.`
+} else {
+    echo '<br> . You are a adult.'; // outputs: You are a minor
+}
+
+
+$t = date("H");
+echo "<p>The hour (of the server) is " . $t; 
+echo ", and will give the following message:</p>";
+
+if ($t < "10") {
+  echo "Have a good morning!";
+} elseif ($t < "20") {
+  echo "Have a good day!";
+} else {
+  echo "Have a good night!";
+}
+
+// switch statement
+// The switch statement is used to execute one block of code among many based on the value of   a variable.
+$day = "Friday";
+switch ($day) {
+    case "Monday":
+        echo '<br> . It is Monday.';
+        break;
+    case "Tuesday":
+        echo '<br> . It is Tuesday.';
+        break;
+    case "Wednesday":
+        echo '<br> . It is Wednesday.';
+        break;
+    default:
+        echo '<br> . It is another day.';
+}
+// for loop
+// The for loop is used to execute a block of code a specific number of times.  
+for ($i = 0; $i < 5; $i++) {
+    echo '<br> . This is iteration number ' . $i;
+}
+
+// foreach loop
+// The foreach loop is used to iterate over arrays and objects.
+$fruits = array("apple", "banana", "cherry ");
+foreach ($fruits as $fruit) {
+    echo '<br> . Fruit asdfggh\jkuytrdhbn  gyu8uig: ' . $fruit;
+}
+
+
+// while loop
+
+
+
 
 
 ?>
