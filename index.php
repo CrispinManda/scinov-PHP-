@@ -4,165 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.php">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.php">Contact</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<?php
-// This is a simple PHP script that outputs "Hello, World!" to the browser.
-echo 'Hello, World!';
+<h2>index page</h2>
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/plant.jpg" class="d-block w-100 " alt="..." height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/plant.jpg" class="d-block w-100" alt="..."  height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/plant.jpg" class="d-block w-100" alt="..."  height="500px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
-// variable declaration
-// Variables in PHP are used to store data that can be used later in the script.
-// We can declare variables in PHP using the $ sign followed by the variable name.
-$x = 5; // integer variable
-$y = 10; // integer variable
-$sum = $x + $y; // adding two integers
-// concatenation is the process of joining two strings together
-// In PHP, we can concatenate strings using the dot (.) operator.
-echo '<br>' .  $sum;
-$greeting = "Hello, PHP!"; // string variable
+<!-- start here -->
 
-// php data types
-// PHP supports several data types, including integers, floats, strings, arrays, and objects.
-
-// string data type
-$name = "John Doe"; // string variable
-echo '<br>' . $name; echo '<br>'; // outputs: John Doe
-var_dump($name); // outputs the type and value of the variable
-// integer data type
-$age = 30; echo '<br>'; // integer variable
-var_dump($age); // outputs the type and value of the variable
-echo '<br>' . $age;
-// float data type
-$height = 5.9; // float variable
-echo '<br>' . $height;
-$pie = 3.14; // float variable
-echo '<br>' . $pie;
-// boolean data type
-$isStudent = true; // boolean variable
-echo '<br>' . ($isStudent ? 'Yes' : 'No'); // outputs 'Yes' if true, 'No' if false
-// array data type
-$colors = array("red", "green", "blue"); // indexed array
-echo '<br>' . implode(", ", $colors); // outputs: red, green, blue
-echo '<br>' . $colors[0]; // outputs: red
-// associative array
-$person = array("name" => "Alice", "age" => 25); // associative array
-echo '<br>' . $person['name'] . ' is ' . $person['age'] . ' years old.'; // outputs: Alice is 25 years old.
-// object data type
-class Car {
-    // An object is an instance of a class, which can contain properties and methods.
-    // Properties are variables that belong to the class, and methods are functions that belong to the class.
-    // In this example, we create a Car class with properties for brand and model.
-    // and a method to get the car details.
-    //$this keyword is used to refer to the current object instance.
-
-    public $brand;
-    public $model;
-
-    function __construct($brand, $model) {
-        $this->brand = $brand;
-        $this->model = $model;
-    }
-
-    function getDetails() {
-        return "Car: " . $this->brand . " " . $this->model;
-    }
-
-    
-}
-$myCar = new Car("Toyota", "Corolla"); // creating an object of the Car class
-    echo '<br>' . $myCar->getDetails(); // outputs: Car: Toyota Corolla
-
-// PHP functions
-//Functions in PHP are blocks of code that can be reused throughout the script.
-function greet($name) {
-    //This function takes a name as an argument and returns a greeting message.
-   return "Hello, " . $name . "!";
-
-}
-
-// Calling the greet function
-echo '<br>' . greet("Alice"); // outputs: Hello, Alice!
-
-// PHP inbuilt-in functions
-// PHP provides many built-in functions for various tasks, such as string manipulation, array handling, 
-// and mathematical operations. Here are a few examples:
-echo '<br>' . strtoupper($greeting); // converts string to uppercase
-echo '<br>' . strtolower($greeting); // converts string to lowercase
-echo '<br>' . strlen($greeting); // gets the length of the string
-echo '<br>' . str_replace("PHP", "World", $greeting); // replaces "PHP" with "World" in the string
-echo '<br>' . count($colors); // counts the number of elements in the array 
-echo '<br>' . max($x, $y); // gets the maximum value between two numbers
-// PHP control structures
-// Control structures allow you to control the flow of your script based on certain conditions.
-
-// friday assessment on things learned so far
-// quiz
-
-// if statement
-// Declare a variable to hold a age in a if statement
-// we use if statements to execute code based on a condition.
-// The condition is a boolean expression that evaluates to true or false.
-// else if statement
-$age = 18; // integer variable
-if ($age >= 18) {
-    echo '<br> . You are an minor.'; // outputs: You are an adult.`
-} else {
-    echo '<br> . You are a adult.'; // outputs: You are a minor
-}
-
-
-$t = date("H");
-echo "<p>The hour (of the server) is " . $t; 
-echo ", and will give the following message:</p>";
-
-if ($t < "10") {
-  echo "Have a good morning!";
-} elseif ($t < "20") {
-  echo "Have a good day!";
-} else {
-  echo "Have a good night!";
-}
-
-// switch statement
-// The switch statement is used to execute one block of code among many based on the value of   a variable.
-$day = "Friday";
-switch ($day) {
-    case "Monday":
-        echo '<br> . It is Monday.';
-        break;
-    case "Tuesday":
-        echo '<br> . It is Tuesday.';
-        break;
-    case "Wednesday":
-        echo '<br> . It is Wednesday.';
-        break;
-    default:
-        echo '<br> . It is another day.';
-}
-// for loop
-// The for loop is used to execute a block of code a specific number of times.  
-for ($i = 0; $i < 5; $i++) {
-    echo '<br> . This is iteration number ' . $i;
-}
-
-// foreach loop
-// The foreach loop is used to iterate over arrays and objects.
-$fruits = array("apple", "banana", "cherry ");
-foreach ($fruits as $fruit) {
-    echo '<br> . Fruit asdfggh\jkuytrdhbn  gyu8uig: ' . $fruit;
-}
-
-
-// while loop
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Welcome to our website!</h3>
+            <p>This is a simple PHP application demonstrating basic features.</p>
+            <p>Feel free to explore the pages and learn more about PHP programming.</p>
+        </div>
+        <div class="col">
+            <h4>Latest News</h4>
+            <ul>
+                <li>PHP 8.0 released with new features!</li>
+                <li>Learn about PHP data types and variables.</li>
+                <li>Check out our tutorials on object-oriented programming in PHP.</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h4>Popular Pages</h4>
+            <ul>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="classwork.php">Classwork</a></li>
+        </div>
+    </div>
+</div>
 
 
 
 
 
-?>
 
 
-    
+
+
+
+
+
+
+
+
+<!-- footer -->
+ <footer class="bg-body-tertiary text-center text-lg-start">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <form action="">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-auto mb-4 mb-md-0">
+          <p class="pt-2">
+            <strong>Sign up for our newsletter</strong>
+          </p>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-5 col-12 mb-4 mb-md-0">
+          <!-- Email input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="email" id="form5Example22" class="form-control" />
+            <label class="form-label" for="form5Example22">Email address</label>
+          </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-auto mb-4 mb-md-0">
+          <!-- Submit button -->
+          <button data-mdb-ripple-init type="button" class="btn btn-primary mb-4">
+            Subscribe
+          </button>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </form>
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2020 Copyright:
+    <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script> 
 </body>
 </html>
